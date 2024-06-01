@@ -3,6 +3,7 @@ import "./App.css"
 
 function App() {
   const [value, SetValue] = useState('')
+
   return (
     <div className="container">
       <div className="calculator">
@@ -11,7 +12,7 @@ function App() {
         </div>
         <div>
           <input type="button" value="AC" onClick={() => SetValue('')} />
-          <input type="button" value="DE" onClick={} />
+          <input type="button" value="DE" onClick={e => SetValue(value.slice(0, -1))} />
           <input type="button" value="." onClick={e => SetValue(value + e.target.value)} />
           <input type="button" value="/" onClick={e => SetValue(value + e.target.value)} />
         </div>
